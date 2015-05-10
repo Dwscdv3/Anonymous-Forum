@@ -19,7 +19,7 @@ if ($_GET != null) {
         <h1 class="left">'.$row1["Title"].'</h1>
         <br />
         <div class="right monospace">'.$row1["Time"].'</div>
-        <br />
+        <br /><br />
         <div class="right">'.$row1["UID"].'：'.$nick.'</div>
     </div>
     <br /><br /><br /><br />
