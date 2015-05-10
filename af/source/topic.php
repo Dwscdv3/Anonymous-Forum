@@ -21,8 +21,8 @@ if ($_GET != null) {
         <br />
         <div class="right">'.$row1["UID"].'：'.$nick.'</div>
     </div>
-    <pre class="larger">'.$row1["Content"].'</pre>
-    <br />
+    <br /><br /><br /><br />
+    <pre class="text-left larger" style="width: 100%;">'.$row1["Content"].'</pre>
     评论及回复施工中……';
     while ($row2 = $result2->fetch_array()) {
         echo '';
