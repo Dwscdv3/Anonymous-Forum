@@ -20,6 +20,12 @@ if ($_POST != null) {
         exit("无法连接到数据库。请确认服务器、用户名和密码填写正确。");
     }
 
+    if (file_exists(config)) {
+        echo "删除旧数据表……<br />";
+        $con->query("DROP TABLE `".$pre."_Topics`");
+        $con->query("DROP TABLE `".$pre."_Comments`");
+    }
+
     echo "创建数据表……<br />";
 
     $con->query("CREATE TABLE `".$pre."_Topics` (

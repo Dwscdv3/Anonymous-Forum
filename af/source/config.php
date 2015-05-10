@@ -5,6 +5,8 @@ require "lib.php";
 static $config = null;
 static $sql = null;
 
+date_default_timezone_set('Etc/GMT-8');
+
 function Initialize() {
     global $config, $sql;
 
