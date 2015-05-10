@@ -133,7 +133,7 @@ pre {
     width: 100%;
 }
 .topic-inner {
-    margin: 16px;
+    margin: 18px 15px 18px 15px;
 
     background-color: #404040;
 }
