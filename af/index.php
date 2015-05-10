@@ -18,6 +18,7 @@ if (!isset($_COOKIE["UID"])) {
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
         <title>匿名版</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
