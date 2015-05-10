@@ -53,7 +53,7 @@ if (!isset($_COOKIE["UID"])) {
             <a class="close-button" onclick="Write();">×</a>
             <div class="full-screen-inner" id="Write-Inner">
                 <form action="source/write.php" method="post">
-                    <label for="Title" style="display: inline;">标题</label>
+                    <label for="Title-Write" style="display: inline;">标题</label>
                     <input class="dark-textbox" id="Title-Write" name="Title" type="text" style="width: 90%;">
                     <br /><br />
                     <label for="Nick" style="display: inline;">昵称</label>

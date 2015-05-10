@@ -15,7 +15,7 @@ function resize() {
 
     $('#Topics').css('width', width - 150 + 'px');
 
-    $('Comments-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
+    $('#Comments-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
     $('#Write-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
 
     $('#Head').css('width', width - 140 + 'px')
