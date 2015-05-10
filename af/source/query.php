@@ -15,16 +15,15 @@ if ($_GET != null) {
         echo '无主题';
         exit;
     }
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = $result->fetch_array()) {
         $nick = $row["Nick"] != null ? $row["Nick"] : "无名氏";
         echo '
 <div class="topic">
     <div class="topic-inner">
-        <a class="larger" onclick="ViewTopic('.$row["ID"].');">'.$row["Title"].'</a>
+        <a class="larger" onclick="ViewTopic('.$row["ID"].');">'.$row["Title"].'</a><span class="right">回复 ('.$row["Comments"].')</span>
         <p><pre>'.$row["Content"].'</pre></p>
         <div class="topic-bar smaller">
-            '.$row["UID"].'：'.$nick.'<div class="right">'.$row["Time"].' / '.$row["LastTime"].'
-        </div>
+            '.$row["UID"].'：'.$nick.'<div class="right monospace">'.$row["Time"].' / '.$row["LastTime"].'</div>
     </div>
 </div>
 ';

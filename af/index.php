@@ -44,6 +44,7 @@ if (!isset($_COOKIE["UID"])) {
             </div>
         </div>
         <div class="center full-screen half-transparent" style="display: none;" id="Comments">
+            <a class="close-button" onclick="CloseTopic();">×</a>
             <div class="full-screen-inner" id="Comments-Inner">
 
             </div>

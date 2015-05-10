@@ -60,11 +60,15 @@ label {
     float: left;
 }
 
+/* Single Rule */
 .smaller {
     font-size: smaller;
 }
 .larger {
     font-size: larger;
+}
+.xx-large {
+    font-size: xx-large;
 }
 .left {
     float: left;
@@ -85,6 +89,12 @@ label {
 .half-transparent{
     background-color: rgba(0, 0, 0, 0.50);
 }
+.sans-serif {
+    font-family: "Microsoft YaHei Light", "Segoe UI Light", "Microsoft YaHei", "Segoe UI", Helvetica, sans-serif;
+}
+.monospace {
+    font-family: Consolas, 'Courier New', 'Lucida Console', monospace;
+}
 
 .dark-textbox {
     color: #ddd;
@@ -104,6 +114,7 @@ label {
     width: 100%;
 }
 
+/* Topics */
 .container {
 
 }
@@ -151,6 +162,7 @@ label {
     
     cursor: default;
 }
+
 a {
     display: block;
 
@@ -168,6 +180,13 @@ a:active {
 .separator {
     background-color: #666;
     height: 1px;
+}
+
+#Head {
+    background-color: rgba(68, 68, 68, 0.9);
+    position: fixed;
+    left: 70px;
+    top: 70px;
 }
 
 #SideBar {

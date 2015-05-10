@@ -15,13 +15,18 @@ function resize() {
 
     $('#Topics').css('width', width - 150 + 'px');
 
+    $('Comments-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
     $('#Write-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
+
+    $('#Head').css('width', width - 140 + 'px')
 }
 
 function ViewTopic(id) {
-    $('#Comments').load('topic.php?id=' + id, function() {
-        $('#Comments').fadeToggle(400);
-    });
+    $('#Comments').fadeToggle(400);
+    $('#Comments-Inner').html("").load('topic.php?id=' + id);
+}
+function CloseTopic() {
+    $('#Comments').fadeToggle(400);
 }
 
 function Write() {
