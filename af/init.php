@@ -52,7 +52,7 @@ if ($_POST != null) {
     ) DEFAULT CHARSET=utf8");
 
     if ($con->errno) {
-        echo $con->error."<br />";
+        echo $con->errno.' '.$con->error."<br />";
         echo "失败";
         exit;
     }
