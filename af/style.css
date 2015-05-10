@@ -64,6 +64,8 @@ pre {
     border-radius: 20px;
 
     float: left;
+
+    overflow: scroll;
 }
 
 /* Single Rule */
@@ -195,7 +197,7 @@ a:active {
     background-color: rgba(68, 68, 68, 0.9);
     position: fixed;
     left: 70px;
-    top: 70px;
+    top: 50px;
 }
 
 #SideBar {
