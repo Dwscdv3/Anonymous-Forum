@@ -21,13 +21,41 @@ if ($_POST != null) {
     }
 
     if (file_exists("config")) {
-        delTable($con);
+        delTable($con, $pre);
     }
-
-    Create:
 
     echo "创建数据表……<br />";
 
+    createTable($con, $pre);
+
+    if ($con->errno) {
+        if ($con->errno == 1050) {
+            delTable($con, $pre);
+            createTable($con, $pre);
+        } else {
+            echo $con->errno . ' ' . $con->error . "<br />";
+            echo "失败";
+            exit;
+        }
+    }
+
+    $con->close();
+
+
+    echo "创建配置文件……<br />";
+
+    $txt = fopen("config", "w");
+    fwrite($txt, $srv."\n");
+    fwrite($txt, $user."\n");
+    fwrite($txt, $pw."\n");
+    fwrite($txt, $db."\n");
+    fwrite($txt, $pre."\n");
+    fclose($txt);
+
+    echo "成功";
+}
+
+function createTable($con, $pre) {
     $con->query("CREATE TABLE `".$pre."_Topics` (
         `ID` INT NOT NULL AUTO_INCREMENT,
         `Title` VARCHAR(253) BINARY NOT NULL,
@@ -50,34 +78,9 @@ if ($_POST != null) {
         `Time` TIMESTAMP NOT NULL,
         PRIMARY KEY(ID)
     ) DEFAULT CHARSET=utf8");
-
-    if ($con->errno) {
-        if ($con->errno == 1050) {
-            delTable($con);
-            goto Create;
-        }
-        echo $con->errno.' '.$con->error."<br />";
-        echo "失败";
-        exit;
-    }
-
-    $con->close();
-
-
-    echo "创建配置文件……<br />";
-
-    $txt = fopen("config", "w");
-    fwrite($txt, $srv."\n");
-    fwrite($txt, $user."\n");
-    fwrite($txt, $pw."\n");
-    fwrite($txt, $db."\n");
-    fwrite($txt, $pre."\n");
-    fclose($txt);
-
-    echo "成功";
 }
 
-function delTable($con) {
+function delTable($con, $pre) {
     echo "删除旧数据表……<br />";
     $con->query("DROP TABLE `".$pre."_Topics`");
     $con->query("DROP TABLE `".$pre."_Comments`");
