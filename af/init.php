@@ -20,11 +20,11 @@ if ($_POST != null) {
         exit("无法连接到数据库。请确认服务器、用户名和密码填写正确。");
     }
 
-    if (file_exists(config)) {
-        echo "删除旧数据表……<br />";
-        $con->query("DROP TABLE `".$pre."_Topics`");
-        $con->query("DROP TABLE `".$pre."_Comments`");
+    if (file_exists("config")) {
+        delTable($con);
     }
+
+    Create:
 
     echo "创建数据表……<br />";
 
@@ -52,6 +52,10 @@ if ($_POST != null) {
     ) DEFAULT CHARSET=utf8");
 
     if ($con->errno) {
+        if ($con->errno == 1050) {
+            delTable($con);
+            goto Create;
+        }
         echo $con->errno.' '.$con->error."<br />";
         echo "失败";
         exit;
@@ -71,6 +75,12 @@ if ($_POST != null) {
     fclose($txt);
 
     echo "成功";
+}
+
+function delTable($con) {
+    echo "删除旧数据表……<br />";
+    $con->query("DROP TABLE `".$pre."_Topics`");
+    $con->query("DROP TABLE `".$pre."_Comments`");
 }
 ?>
 
