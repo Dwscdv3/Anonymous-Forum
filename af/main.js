@@ -23,7 +23,7 @@ function resize() {
 
 function ViewTopic(id) {
     $('#Comments').fadeToggle(400);
-    $('#Comments-Inner').html("").load('source/topic.php?id=' + id function() {
+    $('#Comments-Inner').html("").load('source/topic.php?id=' + id, function() {
         resize();
     });
 }
