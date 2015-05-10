@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Kristen ITC";
+    src: url("font/ITCKRIST.TTF");
+}
+
+/*
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@-webkit-keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+*/
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    
+    cursor: default;
+    
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    font-weight: 100;
+    font-size: x-large;
+    
+    
+    /* 禁止选择文本 */
+    user-select: none;         /* CSS     */
+    -ms-user-select: none;     /* IE 10   */
+    -webkit-user-select: none; /* WebKit  */
+    -moz-user-select: none;    /* FireFox */
+    -khtml-user-select: none;  /* Legacy  */
+}
+
+.separator {
+    background-color: #666;
+    height: 1px;
+}
+.menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+    z-index: 30;
+}
+.sidebar-left-150 {
+    width: 150px;
+    height: 100%;
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+    z-index: 20;
+}
+a.sidebaritem-150 {
+    color: #ddd;
+    
+    margin: 4px;
+    padding-left: 5px;
+    
+    width: 134px;
+    height: 30px;
+    line-height: 30px;
+    
+    display: block;
+    
+    font-size: medium;
+    text-decoration: none;
+}
+a:link.sidebaritem-150,
+a:visited.sidebaritem-150 {
+    background-color: #333;
+}
+a:hover.sidebaritem-150 {
+    background-color: #888;
+}
+a:active.sidebaritem-150 {
+    background-color: #000;
+}
+.main {
+    height: 100%;
+    text-align: center;
+    vertical-align: central;
+    
+    z-index: 10;
+}
+.tucao {
+    text-decoration: line-through;
+	font-size: small;
+}
+
+#Menu {
+    background-color: rgba(0, 0, 0, 0.00);
+    
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+    line-height: 30px;
+    
+    height: 30px;
+    width: 147px;
+    
+    font-size: medium;
+}
+#Nav {
+    background-color: #333;
+    color: #fff;
+    
+    font-size: medium;
+}
+#Counter {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    opacity: 0.2;
+    font-family: "Kristen ITC", "Microsoft YaHei", sans-serif;
+    font-size: 400%;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.50);
+}
+#MyName {
+    position: absolute;
+    right: 5px;
+    top: 40px;
+
+    opacity: 0.3;
+
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+
+    font-family: "Kristen ITC", "Microsoft YaHei", sans-serif;
+    font-weight: 200;
+    font-size: xx-large;
+    text-align: center;
+}

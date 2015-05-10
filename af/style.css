@@ -1,0 +1,192 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Microsoft YaHei Light", "Segoe UI Light", "Microsoft YaHei", "Segoe UI", Helvetica, sans-serif;
+    font-weight: 200;
+    
+    background-color: #222;
+    color: #ddd;
+
+    cursor: default;
+    
+    /* 禁止选择文本 */
+    user-select: none;         /* CSS     */
+    -ms-user-select: none;     /* IE 10   */
+    -webkit-user-select: none; /* WebKit  */
+    -moz-user-select: none;    /* FireFox */
+    -khtml-user-select: none;  /* Legacy  */
+}
+label {
+    font-size: larger;
+    float: left;
+}
+
+.block {
+    display: block;
+}
+.inline {
+    display: inline;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.full-screen {
+    position: fixed;
+
+    padding: 50px;
+    
+    width: 100%;
+    height: 100%;
+    
+    z-index: 100;
+}
+.full-screen-inner {
+    background-color: #444;
+
+    padding: 20px;
+
+    -webkit-box-shadow: 0 0 20px #777;
+    -moz-box-shadow: 0 0 20px #777;
+    box-shadow: 0 0 20px #777;
+
+    border-radius: 20px;
+
+    float: left;
+}
+
+.smaller {
+    font-size: smaller;
+}
+.larger {
+    font-size: larger;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.center {
+    text-align: center;
+}
+.vertical-center-parent {
+    display: table;
+}
+.vertical-center-children {
+    display: table-cell;
+    vertical-align: middle;
+}
+.half-transparent{
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.dark-textbox {
+    color: #ddd;
+    background-color: rgba(0, 0, 0, 0.00);
+
+    border-width: 0 0 2px 0;
+    border-color: #777;
+
+    width: 100%;
+}
+.dark-textarea {
+    color: #ddd;
+    background-color: rgba(127, 127, 127, 0.2);
+
+    border: 2px #777;
+
+    width: 100%;
+}
+
+.container {
+
+}
+.topic {
+    width: 100%;
+}
+.topic-inner {
+    margin: 15px;
+
+    background-color: #404040;
+}
+.topic-bar {
+    background-color: #555;
+}
+
+.close-button {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+    font-size: xx-large;
+}
+
+.sidebar-left-150 {
+    position: fixed;
+    width: 150px;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.sidebaritem-150 {
+    color: #ddd;
+    
+    margin: 4px;
+    padding-left: 5px;
+    
+    width: 137px;
+    height: 30px;
+    line-height: 30px;
+    
+    cursor: default;
+}
+a {
+    display: block;
+
+    cursor: default;
+    
+    text-decoration: none;
+}
+a:hover {
+    background-color: #666;
+}
+a:active {
+    background-color: #444;
+}
+
+.separator {
+    background-color: #666;
+    height: 1px;
+}
+
+#SideBar {
+    background-color: #333;
+}
+#Title {
+    font-size: x-large;
+    margin-top: 8px;
+}
+#ReturnDiv {
+    background-color: #333;
+}
+#Topics {
+    position: absolute;
+    left: 150px;
+}
+#Comments {
+
+}
+#Write {
+
+}
