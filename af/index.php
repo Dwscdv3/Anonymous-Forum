@@ -54,7 +54,9 @@ if (!isset($_COOKIE["UID"])) {
             </div>
         </div>
         <div class="center full-screen half-transparent" style="display: none;" id="Write">
-            <a class="close-button" onclick="CloseWrite();">×</a>
+            <div class="head">
+                <a class="close-button" onclick="CloseWrite();">×</a>
+            </div>
             <div class="full-screen-inner" id="Write-Inner">
                 <label for="Title-Write" style="display: inline;">标题</label>
                 <input class="dark-textbox" id="Title-Write" name="Title" type="text" style="width: 90%;">
