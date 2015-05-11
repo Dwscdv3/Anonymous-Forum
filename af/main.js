@@ -6,6 +6,8 @@ var tid = 0;
 $(document).ready(function () {
     resize();
     ajaxLoadTopics();
+
+    $('#Nick').val($.cookie("Nick"));
 });
 $(window).resize(resize);
 
@@ -105,6 +107,10 @@ function Submit() {
         });
     }
     CloseWrite();
+    setTimeout(function() {
+        $('#Title-Write').val("");
+        $('#Content').val("");
+    }, FadeTime);
 }
 
 function ajaxLoadTopics() {

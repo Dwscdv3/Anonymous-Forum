@@ -11,6 +11,8 @@ if ($_POST != null) {
 
     $uid = $_COOKIE["UID"];
 
+    setcookie("Nick", $nick, time() + (86400 * 365));
+
     Initialize();
 
     $date = date('Y-m-d H:i:s', time());

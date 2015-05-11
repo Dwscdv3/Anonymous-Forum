@@ -22,6 +22,7 @@ if (!isset($_COOKIE["UID"])) {
         <title>匿名版</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="jslib/jquery.cookie.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
