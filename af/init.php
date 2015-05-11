@@ -68,7 +68,7 @@ function createTable($con, $pre) {
         PRIMARY KEY(ID)
     ) DEFAULT CHARSET=utf8");      # LastTime 字段应在发表评论时更新
 
-    $con->query("CREATE TABLE `".$pre."_Comments` (
+    $con->query("CREATE TABLE `".$pre. "_Comments` (
         `ID` INT NOT NULL AUTO_INCREMENT,
         `Topic` INT NOT NULL,
         `Title` VARCHAR(253) BINARY NOT NULL,

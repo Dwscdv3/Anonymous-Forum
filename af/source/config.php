@@ -26,6 +26,5 @@ function Initialize() {
     }
     if (!$sql) {
         $sql = new mysqli($config[0], $config[1], $config[2], $config[3]);
-
     }
 }

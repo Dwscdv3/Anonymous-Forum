@@ -1,5 +1,7 @@
-var page = 1;
+const FadeTime = 400;
 
+var page = 1;
+var replyTopic = 0;
 $(document).ready(function () {
     resize();
     ajaxLoadTopic();
@@ -11,7 +13,7 @@ function resize() {
     var height = $(window).height();
 
     var contentBoxHeight = height - 300;
-    $('#Content').css('height', contentBoxHeight < 100 ? 100 : contentBoxHeight + 'px')
+    $('#Content').css('height', contentBoxHeight < 100 ? 100 : contentBoxHeight + 'px');
 
     $('#Topics').css('width', width - 150 + 'px');
 
@@ -22,17 +24,21 @@ function resize() {
 }
 
 function ViewTopic(id) {
-    $('#Comments').fadeToggle(400);
+    $('#Comments').fadeIn(FadeTime);
     $('#Comments-Inner').html("").load('source/topic.php?id=' + id, function() {
         resize();
     });
 }
 function CloseTopic() {
-    $('#Comments').fadeToggle(400);
+    $('#Comments').fadeOut(FadeTime);
 }
 
-function Write() {
-    $('#Write').fadeToggle(400);
+function Write(tid) {
+    $('#Write').fadeIn(FadeTime);
+    replyTopic = tid;
+}
+function CloseWrite() {
+    $('#Write').fadeOut(FadeTime);
 }
 
 
@@ -67,6 +73,22 @@ function NextPage() {
     }
 }
 
+function Submit() {
+    if (replyTopic) {
+        $.post("source/write.php", {
+            Title:$('#Title-Write').val(),
+            Content:$('#Content').val(),
+            Nick:$('#Nick').val(),
+            Topic:replyTopic
+        });
+    } else {
+        $.post("source/write.php", {
+            Title:$('#Title-Write').val(),
+            Content:$('#Content').val(),
+            Nick:$('#Nick').val()
+        });
+    }
+}
 
 function ajaxLoadTopic() {
     $('#Topics').load('source/query.php?offset=' + (page - 1) * 20 +'&amount=20');

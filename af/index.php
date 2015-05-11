@@ -33,7 +33,7 @@ if (!isset($_COOKIE["UID"])) {
             <h5 class="sidebaritem-150">Anonymous Forum</h5>
             <div class="separator"></div>
             <div class="bottom z-10" id="ReturnDiv">
-                <a class="sidebaritem-150" onclick="Write();">+ 发表新主题</a>
+                <a class="sidebaritem-150" onclick="Write(0);">+ 发表新主题</a>
                 <div class="separator"></div>
                 <div class="sidebaritem-150" style="padding-left: 0; width: 142px;">
                     <a class="block left" style="text-align: center; width: 30px;" onclick="PrevPage();">&lt;</a>
@@ -45,26 +45,25 @@ if (!isset($_COOKIE["UID"])) {
             </div>
         </div>
         <div class="center full-screen half-transparent" style="display: none;" id="Comments">
+            <a class="close-button" onclick="Write($('#TID').text());">×</a>
             <a class="close-button" onclick="CloseTopic();">×</a>
             <div class="full-screen-inner" id="Comments-Inner">
 
             </div>
         </div>
         <div class="center full-screen half-transparent" style="display: none;" id="Write">
-            <a class="close-button" onclick="Write();">×</a>
+            <a class="close-button" onclick="CloseWrite();">×</a>
             <div class="full-screen-inner" id="Write-Inner">
-                <form action="source/write.php" method="post">
-                    <label for="Title-Write" style="display: inline;">标题</label>
-                    <input class="dark-textbox" id="Title-Write" name="Title" type="text" style="width: 90%;">
-                    <br /><br />
-                    <label for="Nick" style="display: inline;">昵称</label>
-                    <input class="dark-textbox" id="Nick" name="Nick" type="text" style="width: 90%;">
-                    <br /><br />
-                    <label for="Content">正文</label>
-                    <textarea class="dark-textarea" id="Content" name="Content"></textarea>
-                    <br /><br />
-                    <input type="submit" value="发表" />
-                </form>
+                <label for="Title-Write" style="display: inline;">标题</label>
+                <input class="dark-textbox" id="Title-Write" name="Title" type="text" style="width: 90%;">
+                <br /><br />
+                <label for="Nick" style="display: inline;">昵称</label>
+                <input class="dark-textbox" id="Nick" name="Nick" type="text" style="width: 90%;">
+                <br /><br />
+                <label for="Content">正文</label>
+                <textarea class="dark-textarea" id="Content" name="Content"></textarea>
+                <br /><br />
+                <input type="button" value="发表" onclick="Submit();" />
             </div>
         </div>
     </body>

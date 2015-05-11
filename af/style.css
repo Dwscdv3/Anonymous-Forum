@@ -15,6 +15,9 @@ html, body {
     -webkit-user-select: none; /* WebKit  */
     -moz-user-select: none;    /* FireFox */
     -khtml-user-select: none;  /* Legacy  */
+
+    scrollbar-base-color: rgba(0, 0, 0, 0);
+    scrollbar-arrow-color: rgba(127, 127, 127, 0.5);
 }
 label {
     font-size: larger;
@@ -25,6 +28,9 @@ pre {
     white-space: -moz-pre-wrap;=
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+}
+div {
+
 }
 
 .block {
@@ -65,10 +71,13 @@ pre {
 
     float: left;
 
-    overflow: scroll;
+    overflow: auto;
 }
 
 /* Single Rule */
+.bold {
+    font-weight: bold;
+}
 .smaller {
     font-size: smaller;
 }
@@ -138,6 +147,17 @@ pre {
     background-color: #404040;
 }
 .topic-bar {
+    background-color: #555;
+}
+.content {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.comment {
+    margin: 5px 8px 5px 8px;
+
     background-color: #555;
 }
 
