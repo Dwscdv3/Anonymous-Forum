@@ -20,7 +20,7 @@ if ($_GET != null) {
         echo '
 <div class="topic">
     <div class="topic-inner">
-        <a class="larger" onclick="ViewComments('.$row["ID"].');">'.$row["Title"].'<span class="right smaller">回复 ('.$row["Comments"].')&nbsp;</span></a>
+        <a class="larger" onclick="tid = '.$row["ID"].'; ViewComments(tid);">'.$row["Title"].'<span class="right smaller">回复 ('.$row["Comments"].')&nbsp;</span></a>
         <p><pre class="content">'.$row["Content"].'</pre></p>
         <div class="topic-bar smaller">
             '.$row["UID"].'：'.$nick.'<div class="right monospace">'.$row["Time"].' / '.$row["LastTime"].'&nbsp;</div>

@@ -49,7 +49,7 @@ if (!isset($_COOKIE["UID"])) {
             <div class="head">
                 <a class="close-button" onclick="CloseComments();">×</a>
                 <a class="toolbar-button" onclick="Write($('#TID').text());">回复</a>
-                <a class="toolbar-button" onclick="LoadComments();">刷新</a>
+                <a class="toolbar-button" onclick="LoadComments(tid);">刷新</a>
             </div>
             <div class="full-screen-inner" id="Comments-Inner">
 

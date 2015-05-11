@@ -1,7 +1,7 @@
 const FadeTime = 400;
 
 var page = 1;
-var replyTopic = 0;
+var tid = 0;
 
 $(document).ready(function () {
     resize();
@@ -38,9 +38,9 @@ function CloseComments() {
     $('#Comments').fadeOut(FadeTime);
 }
 
-function Write(tid) {
+function Write(_tid) {
     $('#Write').fadeIn(FadeTime);
-    replyTopic = tid;
+    tid = _tid;
 }
 function CloseWrite() {
     $('#Write').fadeOut(FadeTime);
@@ -83,18 +83,17 @@ function Submit() {
 
     if ($.trim(title) == "") {
         $('#TitleRequired').css('color', '#f00');
-        $title.focusin();
         return;
     }
 
-    if (replyTopic) {
+    if (tid) {
         $.post("source/write.php", {
             Title:title,
             Content:$('#Content').val(),
             Nick:$('#Nick').val(),
-            Topic:replyTopic
+            Topic:tid
         }, function() {
-            LoadComments(replyTopic);
+            LoadComments(tid);
         });
     } else {
         $.post("source/write.php", {
