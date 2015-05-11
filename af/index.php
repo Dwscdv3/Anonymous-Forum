@@ -46,7 +46,7 @@ if (!isset($_COOKIE["UID"])) {
         </div>
         <div class="center full-screen half-transparent" style="display: none;" id="Comments">
             <div class="head">
-                <a class="close-button" onclick="CloseTopic();">×</a>
+                <a class="close-button" onclick="CloseComments();">×</a>
                 <a class="toolbar-button" onclick="Write($('#TID').text());">回复</a>
             </div>
             <div class="full-screen-inner" id="Comments-Inner">

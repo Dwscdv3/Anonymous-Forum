@@ -4,7 +4,7 @@ var page = 1;
 var replyTopic = 0;
 $(document).ready(function () {
     resize();
-    ajaxLoadTopic();
+    ajaxLoadTopics();
 });
 $(window).resize(resize);
 
@@ -23,13 +23,17 @@ function resize() {
     $('#Head').css('width', width - 140 + 'px')
 }
 
-function ViewTopic(id) {
+function ViewComments(id) {
     $('#Comments').fadeIn(FadeTime);
+    LoadComments(id);
+
+}
+function LoadComments(id) {
     $('#Comments-Inner').html("").load('source/topic.php?id=' + id, function() {
         resize();
     });
 }
-function CloseTopic() {
+function CloseComments() {
     $('#Comments').fadeOut(FadeTime);
 }
 
@@ -45,7 +49,7 @@ function CloseWrite() {
 function PrevPage() {
     if (page > 1) {
         page--;
-        ajaxLoadTopic();
+        ajaxLoadTopics();
     } else {
         $('#Page').text('第一页');
         setTimeout(function() {
@@ -81,15 +85,18 @@ function Submit() {
             Nick:$('#Nick').val(),
             Topic:replyTopic
         });
+        LoadComments(replyTopic);
     } else {
         $.post("source/write.php", {
             Title:$('#Title-Write').val(),
             Content:$('#Content').val(),
             Nick:$('#Nick').val()
         });
+        ajaxLoadTopics();
     }
+    CloseWrite();
 }
 
-function ajaxLoadTopic() {
+function ajaxLoadTopics() {
     $('#Topics').load('source/query.php?offset=' + (page - 1) * 20 +'&amount=20');
 }
