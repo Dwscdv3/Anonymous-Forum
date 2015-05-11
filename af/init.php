@@ -62,8 +62,8 @@ function createTable($con, $pre) {
         `Content` VARCHAR(20000) BINARY,
         `Nick` VARCHAR(24) BINARY,
         `UID` CHAR(4) BINARY NOT NULL,
-        `Time` TIMESTAMP NOT NULL,
         `LastTime` TIMESTAMP NOT NULL,
+        `Time` TIMESTAMP NOT NULL,
         `Comments` INT DEFAULT 0,
         PRIMARY KEY(ID)
     ) DEFAULT CHARSET=utf8");      # LastTime 字段应在发表评论时更新

@@ -41,20 +41,17 @@ if ($_POST != null) {
     Title,
     Content,
     Nick,
-    UID,
-    Time
+    UID
 ) VALUES (
     '$topic',
     '$title',
     '$content',
     '$nick',
-    '$uid',
-    '$date'
+    '$uid'
 )");
         $sql->query("UPDATE `$config[4]_Topics` SET
-    LastTime='$date',
     Comments=Comments+1
-WHERE Topic=$topic
+WHERE ID=$topic
 ");
         if (!$sql->errno) {
             exit("refresh");
