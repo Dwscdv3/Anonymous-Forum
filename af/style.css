@@ -164,6 +164,7 @@ div {
 .head {
     position: fixed;
     top: 0;
+    left: 0;
 
     width: 100%;
 }
@@ -180,11 +181,13 @@ div {
 .toolbar-button {
     float: right;
 
+    padding: 0 10px 0 10px;
+
     height: 50px;
-    line-height: 50px;
+    line-height: 56px;
     text-align: center;
 
-    font-size: x-large;
+    font-size: large;
 }
 
 .sidebar-left-150 {
