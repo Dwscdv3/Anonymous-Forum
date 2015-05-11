@@ -51,12 +51,12 @@ if ($_POST != null) {
     '$uid',
     '$date'
 )");
-        if (!$sql->errno) {
-            $sql->query("UPDATE `$config[4]_Topics` SET
+        $sql->query("UPDATE `$config[4]_Topics` SET
     LastTime='$date',
     Comments=Comments+1
 WHERE Topic=$topic
 ");
+        if (!$sql->errno) {
             exit("refresh");
         } else {
             alert($sql->errno.' '.$sql->error);

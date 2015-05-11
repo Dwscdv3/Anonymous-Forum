@@ -60,6 +60,7 @@ if (!isset($_COOKIE["UID"])) {
             <div class="full-screen-inner" id="Write-Inner">
                 <label for="Title-Write" style="display: inline;">标题</label>
                 <input class="dark-textbox" id="Title-Write" name="Title" type="text" style="width: 90%;">
+                <div class="smaller" id="TitleRequired">* 标题必须填写</div>
                 <br /><br />
                 <label for="Nick" style="display: inline;">昵称</label>
                 <input class="dark-textbox" id="Nick" name="Nick" type="text" style="width: 90%;">
