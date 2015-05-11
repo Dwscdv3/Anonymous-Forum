@@ -33,6 +33,7 @@ if (!isset($_COOKIE["UID"])) {
             <h5 class="sidebaritem-150">Anonymous Forum</h5>
             <div class="separator"></div>
             <div class="bottom z-10" id="ReturnDiv">
+                <a class="sidebaritem-150" onclick="ajaxLoadTopics();">☯ 刷新</a>
                 <a class="sidebaritem-150" onclick="Write(0);">+ 发表新主题</a>
                 <div class="separator"></div>
                 <div class="sidebaritem-150" style="padding-left: 0; width: 142px;">
@@ -48,6 +49,7 @@ if (!isset($_COOKIE["UID"])) {
             <div class="head">
                 <a class="close-button" onclick="CloseComments();">×</a>
                 <a class="toolbar-button" onclick="Write($('#TID').text());">回复</a>
+                <a class="toolbar-button" onclick="LoadComments();">刷新</a>
             </div>
             <div class="full-screen-inner" id="Comments-Inner">
 

@@ -41,15 +41,18 @@ if ($_POST != null) {
     Title,
     Content,
     Nick,
-    UID
+    UID,
+    Time
 ) VALUES (
     '$topic',
     '$title',
     '$content',
     '$nick',
-    '$uid'
+    '$uid',
+    '$date'
 )");
         $sql->query("UPDATE `$config[4]_Topics` SET
+    LastTime='$date',
     Comments=Comments+1
 WHERE ID=$topic
 ");
