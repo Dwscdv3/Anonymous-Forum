@@ -3,8 +3,6 @@ const FadeTime = 400;
 var page = 1;
 var replyTopic = 0;
 
-var $title = $('#Title-Write');
-
 $(document).ready(function () {
     resize();
     ajaxLoadTopics();
@@ -81,7 +79,7 @@ function NextPage() {
 }
 
 function Submit() {
-    var title = $title.val();
+    var title = $('#Title-Write').val();
 
     if ($.trim(title) == "") {
         $('#TitleRequired').css('color', '#f00');
