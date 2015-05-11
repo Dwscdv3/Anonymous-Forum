@@ -24,7 +24,7 @@ if ($_GET != null) {
     </div>
     <br /><br /><br /><br />
     <pre class="text-left larger" style="width: 100%;">'.$row1["Content"].'</pre>
-    <br /><br />';
+    <br />';
     while ($row2 = $result2->fetch_array()) {
         $nick2 = $row2["Nick"] != null ? $row2["Nick"] : "无名氏";
         echo '<div class="comment">

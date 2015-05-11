@@ -14,7 +14,7 @@ function resize() {
     var height = $(window).height();
 
     var contentBoxHeight = height - 320;
-    $('#Content').css('height', contentBoxHeight < 100 ? 100 : contentBoxHeight + 'px');
+    $('#Content').css('height', contentBoxHeight + 'px');
 
     $('#Topics').css('width', width - 150 + 'px');
 

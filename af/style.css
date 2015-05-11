@@ -28,6 +28,8 @@ pre {
     white-space: -moz-pre-wrap;=
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+    
+    min-height: 15px;
 }
 div {
 
@@ -132,6 +134,7 @@ div {
     border: 2px #777;
 
     width: 98%;
+    min-height: 100px;
 }
 
 /* Topics */
@@ -151,7 +154,7 @@ div {
 }
 .content {
     width: 100%;
-    height: 45px;
+    max-height: 75px;
     overflow: hidden;
 }
 
