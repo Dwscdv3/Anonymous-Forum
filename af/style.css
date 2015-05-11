@@ -177,6 +177,15 @@ div {
 
     font-size: xx-large;
 }
+.toolbar-button {
+    float: right;
+
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+    font-size: x-large;
+}
 
 .sidebar-left-150 {
     position: fixed;
