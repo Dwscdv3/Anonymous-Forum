@@ -3,11 +3,22 @@ const FadeTime = 400;
 var page = 1;
 var tid = 0;
 
+function getCookie(name) {
+    var cookieStr = document.cookie;
+    var cookieList = cookieStr.split("; ");
+    for (var i = 0; i < cookieList.length; i++) {
+        var cookie = cookieList[i].split("=");
+        if (cookie[0] == name) {
+            return cookie[1];
+        }
+    }
+}
+
 $(document).ready(function () {
     resize();
     ajaxLoadTopics();
 
-    $('#Nick').val($.cookie("Nick"));
+    $('#Nick').val(getCookie("Nick"));
 });
 $(window).resize(resize);
 
