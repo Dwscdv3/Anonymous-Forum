@@ -69,7 +69,7 @@ if (!isset($_COOKIE["UID"])) {
                 <label for="Nick" style="display: inline;">昵称</label>
                 <input class="dark-textbox" id="Nick" name="Nick" type="text" style="width: 90%;">
                 <br /><br />
-                <label for="Content">正文</label>
+                <label for="Content">正文<span class="smaller right">$ 可以使用HTML排版，含有JS代码的话会被黑洞吃掉哦&nbsp;</span></label>
                 <textarea class="dark-textarea" id="Content" name="Content"></textarea>
                 <br /><br />
                 <input type="button" value="发表" onclick="Submit();" />

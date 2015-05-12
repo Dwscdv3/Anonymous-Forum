@@ -9,7 +9,7 @@ function getCookie(name) {
     for (var i = 0; i < cookieList.length; i++) {
         var cookie = cookieList[i].split("=");
         if (cookie[0] == name) {
-            return cookie[1];
+            return decodeURI(cookie[1]);
         }
     }
 }
@@ -17,8 +17,6 @@ function getCookie(name) {
 $(document).ready(function () {
     resize();
     ajaxLoadTopics();
-
-    $('#Nick').val(getCookie("Nick"));
 });
 $(window).resize(resize);
 
@@ -33,6 +31,9 @@ function resize() {
 
     $('#Comments-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
     $('#Write-Inner').css('width', width - 140 + 'px').css('height', height - 140 + 'px');
+
+    $('#Title-Write').css('width', width - 140 - 60 + 'px');
+    $('#Nick').css('width', width - 140 - 60 + 'px');
 
     $('#Head').css('width', width - 140 + 'px')
 }
@@ -53,7 +54,10 @@ function CloseComments() {
 
 function Write(_tid) {
     $('#Write').fadeIn(FadeTime);
+    
     tid = _tid;
+
+    $('#Nick').val(getCookie("Nick"));
 }
 function CloseWrite() {
     $('#Write').fadeOut(FadeTime);
