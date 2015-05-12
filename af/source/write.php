@@ -5,9 +5,9 @@ require "config.php";
 global $config, $sql;
 
 if ($_POST != null) {
-    $title = $_POST["Title"];
+    $title = htmlspecialchars($_POST["Title"]);
     $content = $_POST["Content"];
-    $nick = $_POST["Nick"];
+    $nick = htmlspecialchars($_POST["Nick"]);
 
     $uid = $_COOKIE["UID"];
 
