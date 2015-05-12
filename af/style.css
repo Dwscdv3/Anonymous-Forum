@@ -233,7 +233,7 @@ a:active {
 }
 
 #Head {
-    background-color: rgba(68, 68, 68, 0.9);
+    background-color: rgba(68, 68, 68, 0.85);
     position: fixed;
     left: 70px;
     top: 50px;

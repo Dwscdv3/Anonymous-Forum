@@ -19,6 +19,7 @@ if (!isset($_COOKIE["UID"])) {
     <head>
         <meta charset="utf-8" />
         <meta content="width=540, target-densitydpi=280, initial-scale=0.55, maximum-scale=0.55, user-scalable=0" name="viewport">
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <title>匿名版</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
