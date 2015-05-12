@@ -54,7 +54,7 @@ function CloseComments() {
 
 function Write(_tid) {
     $('#Write').fadeIn(FadeTime);
-    
+
     tid = _tid;
 
     $('#Nick').val(getCookie("Nick"));
