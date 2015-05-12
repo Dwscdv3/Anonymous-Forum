@@ -17,13 +17,17 @@ if ($_GET != null) {
     }
     while ($row = $result->fetch_array()) {
         $nick = $row["Nick"] != null ? $row["Nick"] : "无名氏";
+        $time = date("m-d H:i", strtotime($row["Time"]));
+        $last = date("m-d H:i", strtotime($row["LastTime"]));
+
+
         echo '
 <div class="topic">
     <div class="topic-inner">
         <a class="larger" onclick="tid = '.$row["ID"].'; ViewComments(tid);">'.$row["Title"].'<span class="right smaller">回复 ('.$row["Comments"].')&nbsp;</span></a>
         <p><pre class="content">'.$row["Content"].'</pre></p>
         <div class="topic-bar smaller">
-            '.$row["UID"].'：'.$nick.'<div class="right monospace">'.$row["Time"].' / '.$row["LastTime"].'&nbsp;</div>
+            '.$row["UID"].'：'.$nick.'<div class="right monospace">'.$time.' / '.$last.'&nbsp;</div>
         </div>
     </div>
 </div>
