@@ -27,7 +27,7 @@ if ($_GET != null) {
         <a class="larger" onclick="tid = '.$row["ID"].'; ViewComments(tid);">'.$row["Title"].'<span class="right smaller">回复 ('.$row["Comments"].')&nbsp;</span></a>
         <p><pre class="content">'.$row["Content"].'</pre></p>
         <div class="topic-bar smaller">
-            '.$row["UID"].'：'.$nick.'<div class="right monospace">'.$time.' / '.$last.'&nbsp;</div>
+            '.$row["UID"].'：'.$nick.'<div class="right">'.$time.' / '.$last.'&nbsp;</div>
         </div>
     </div>
 </div>
