@@ -15,10 +15,12 @@ if (!isset($_COOKIE["UID"])) {
 if ($_GET["id"] != null) {
     echo '<script type="text/javascript">
 var waitForAjax = setInterval(function() {
-    if (ajaxFinished) {
-        clearInterval(waitForAjax);
-        ViewComments('.$_GET["id"].');
-    }
+    try {
+        if (ajaxFinished) {
+            clearInterval(waitForAjax);
+            ViewComments(' . $_GET["id"] . ');
+        }
+    } catch (ex) {}
 }, 500);
 </script>';
 }
@@ -44,6 +46,9 @@ var waitForAjax = setInterval(function() {
             <h1 class="sidebaritem-150" id="Title">匿名版</h1>
             <h5 class="sidebaritem-150">Anonymous Forum</h5>
             <div class="separator"></div>
+
+            <div class="smaller"><b>Tips:</b><br />正文支持HTML格式<br />&amp;&quot;&gt;&lt;等字符请注意转义</div>
+
             <div class="bottom z-10" id="ReturnDiv">
                 <a class="sidebaritem-150" onclick="ajaxLoadTopics();">☯ 刷新</a>
                 <a class="sidebaritem-150" onclick="Write(0);">+ 发表新主题</a>
