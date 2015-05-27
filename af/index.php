@@ -13,7 +13,6 @@ if (!isset($_COOKIE["UID"])) {
 }
 
 if ($_GET["id"] != null) {
-<<<<<<< HEAD
     echo '<script type="text/javascript">
 var waitForAjax = setInterval(function() {
     if (ajaxFinished) {
@@ -22,14 +21,6 @@ var waitForAjax = setInterval(function() {
     }
 }, 500);
 </script>';
-=======
-    echo "var waitForAjax = setInterval(function() {
-    if (ajaxFinished) {
-        clearInterval(waitForAjax);
-        ViewComments(".$_GET["id"].");
-    }
-}, 500);";
->>>>>>> a9ba43c2795bc3b8bcf6cfc809ca8fd633288c96
 }
 
 ?>
