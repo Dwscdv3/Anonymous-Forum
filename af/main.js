@@ -1,4 +1,4 @@
-const FadeTime = 400;
+var FadeTime = 400;
 
 var page = 1;
 var tid = 0;
