@@ -12,6 +12,15 @@ if (!isset($_COOKIE["UID"])) {
     setcookie("UID", genUID(), time() + (86400 * 365));
 }
 
+if ($_GET["id"] != null) {
+    echo "var waitForAjax = setInterval(function() {
+    if (ajaxFinished) {
+        clearInterval(waitForAjax);
+        ViewComments(".$_GET["id"].");
+    }
+}, 500);";
+}
+
 ?>
 
 <!DOCTYPE html>
