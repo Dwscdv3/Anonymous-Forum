@@ -3,6 +3,7 @@ var FadeTime = 400;
 var page = 1;
 var tid = 0;
 
+var ajaxFinished = false;
 
 function getCookie(name) {
     var cookieStr = document.cookie;
@@ -129,7 +130,6 @@ function Submit() {
     }, FadeTime);
 }
 
-var ajaxFinished = false;
 function ajaxLoadTopics() {
     $('#Topics').load('source/query.php?offset=' + (page - 1) * 20 +'&amount=20', function() {
         ajaxFinished = true;
