@@ -16,7 +16,7 @@ if ($_GET != null) {
     $nick1 = $row1["Nick"] != null ? $row1["Nick"] : "无名氏";
     echo '<div>
     <div id="Head">
-        <h1 class="left">'.$row1["Title"].'<span class="smaller">&nbsp;&nbsp;&nbsp;#<span id="TID">'.$id.'</span></span></h1>
+        <h2 class="left">'.$row1["Title"].'<span class="smaller">&nbsp;&nbsp;&nbsp;#<span id="TID">'.$id.'</span></span></h2>
         <br />
         <div class="right monospace">&nbsp;&nbsp;&nbsp;'.$row1["Time"].'</div>
         <br />
