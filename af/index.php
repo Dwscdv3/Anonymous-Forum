@@ -79,18 +79,19 @@ var waitForAjax = setInterval(function() {
                 position: absolute;
                 top: 60px;
                 right: 10px;
-                background-color: #555;
+                background-color: #666;
+                padding: 5px;
                 ">
                     <label class="inline" for="Password-Delete">密码</label>
                     <input id="Password-Delete" name="Password" type="password" />
-                    <input type="button" onclick="Delete();" />
+                    <input type="button" value="确认" onclick="Delete();" />
                 </div>
                 <a class="toolbar-button pw-needed hide" id="Edit-Topic">编辑</a>
                 <!-- todo:
                        variable: isEdit
                        form: 管理密码 to verify password -->
             </div>
-            <div class="border full-screen-inner" id="Comments-Inner">
+            <div class="border full-screen-inner" id="Comments-Inner" style="z-index: -1;">
 
             </div>
         </div>
@@ -120,7 +121,7 @@ var waitForAjax = setInterval(function() {
                 </div>
                 <textarea id="Content" name="Content" maxlength="20000"></textarea>
                 <br /><br />
-                <input type="button" value="发表" onclick="Submit();" />
+                <input class="larger" type="button" value="发表" onclick="Submit();" />
             </div>
         </div>
     </body>

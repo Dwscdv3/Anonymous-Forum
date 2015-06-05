@@ -39,7 +39,6 @@ input[type=button] {
     background-color: #555;
 
     font-family: "Microsoft YaHei Light", "Segoe UI Light", "Microsoft YaHei", "Segoe UI", Helvetica, sans-serif;
-    font-size: larger;
 }
 input[type=text],
 input[type=password] {
