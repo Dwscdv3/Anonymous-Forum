@@ -12,7 +12,7 @@ if ($_POST != null) {
         $id = $_POST["TID"];
         $result = $sql->query("SELECT `Password` FROM `$config[4]_Topics` WHERE `ID`=$id;");
         $row = $result->fetch_array();
-        if ($pw = $row["Password"]) {
+        if ($pw == $row["Password"]) {
             $sql->query("DELETE FROM `$config[4]_Topics` WHERE `ID`=$id;");
             $sql->query("DELETE FROM `$config[4]_Comments` WHERE `Topic`=$id;");
             exit("Succeed");

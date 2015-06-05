@@ -69,7 +69,6 @@ CREATE TABLE `".$pre."_Topics` (
     `Password` CHAR(32),
     PRIMARY KEY(ID)
 ) DEFAULT CHARSET=utf8;
-CREATE UNIQUE INDEX Topics_ID_Index ON `".$pre."_Topics`(ID);
 CREATE INDEX Topics_LastTime_Index ON `".$pre."_Topics`(LastTime DESC);
 ");
 
@@ -85,7 +84,6 @@ CREATE TABLE `".$pre. "_Comments` (
     `Password` CHAR(32),
     PRIMARY KEY(ID)
 ) DEFAULT CHARSET=utf8;
-CREATE UNIQUE INDEX Comments_ID_Index ON `".$pre."_Comments`(ID);
 CREATE INDEX Comments_Topic_Index ON `".$pre."_Comments`(Topic);
 ");
 }
