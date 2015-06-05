@@ -94,6 +94,8 @@ function Write(_tid, _isEdit) {
     tid = _tid == undefined ? 0 : _tid;
     isEdit = _isEdit;
 
+    $('#Title-Write').val('');
+    $('#Content').val('');
     $('#Nick').val(getCookie('Nick'));
     $('#Password').val(getCookie('Password'));
 }
