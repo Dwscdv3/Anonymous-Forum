@@ -79,8 +79,10 @@ var isEdit = 0;
  */
 function Write(_tid, _isEdit) {
     var $pw_label = $('#Password-Label');
+    if (_isEdit == undefined) {
+        _isEdit = 0;
+    }
     switch (_isEdit) {
-        case undefined:
         case 0:
             $pw_label.html('管理密码<span class="small">(可留空, 但将无法编辑删除)</span>');
             break;
