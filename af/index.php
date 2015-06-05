@@ -75,7 +75,12 @@ var waitForAjax = setInterval(function() {
                 <a class="toolbar-button hide" id="Reply">回复</a>
                 <a class="toolbar-button pw-needed hide" id="Delete-Topic">删除</a>
                 <!-- todo: dialog to enter password -->
-                <div class="border toolbar-button pw-needed hide" id="Delete-Topic-Validate" style="position: absolute; top: 60px; right: 10px;">
+                <div class="border pw-needed hide" id="Delete-Topic-Validate" style="
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background-color: #555;
+                ">
                     <label class="inline" for="Password-Delete">密码</label>
                     <input id="Password-Delete" name="Password" type="password" />
                     <input type="button" onclick="Delete();" />
