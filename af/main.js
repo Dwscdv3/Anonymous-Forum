@@ -4,29 +4,29 @@ var page = 1;
 
 var ajaxFinished = false;
 
-// DOM事件
-{
-    // 删除主题
-    $('#Delete-Topic').click(function () {
-        $('#Delete-Topic-Validate').fadeToggle(FadeTime);
-        $('#Password-Delete').val('');
-    });
-    // 刷新主题页
-    $('#Refresh-Topic').click(function () {
-        LoadComments(tid);
-    });
-    // 回复
-    $('#Reply').click(function () {
-        Write($('#TID').text());
-    });
-    // 编辑主题
-    $('#Edit-Topic').click(function () {
-        Write($('#TID').text(), 1);
-    });
-}
 
 
 $(document).ready(function () {
+    // DOM事件
+    {
+        // 删除主题
+        $('#Delete-Topic').click(function () {
+            $('#Delete-Topic-Validate').fadeToggle(FadeTime);
+            $('#Password-Delete').val('');
+        });
+        // 刷新主题页
+        $('#Refresh-Topic').click(function () {
+            LoadComments(tid);
+        });
+        // 回复
+        $('#Reply').click(function () {
+            Write($('#TID').text());
+        });
+        // 编辑主题
+        $('#Edit-Topic').click(function () {
+            Write($('#TID').text(), 1);
+        });
+    }
     resize();
     ajaxLoadTopics();
 });
