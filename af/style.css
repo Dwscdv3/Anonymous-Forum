@@ -271,8 +271,8 @@ a:active {
 }
 
 .form-incorrect {
-    background-color: rgba(255, 127, 127, 0.50);
-    border-color: rgba(255, 63, 63, 0.50);
+    background-color: rgba(255, 127, 127, 0.50) !important;
+    border-color: rgba(255, 63, 63, 0.50) !important;
 }
 
 
