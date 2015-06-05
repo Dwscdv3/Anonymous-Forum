@@ -25,16 +25,6 @@ var ajaxFinished = false;
     });
 }
 
-function getCookie(name) {
-    var cookieStr = document.cookie;
-    var cookieList = cookieStr.split("; ");
-    for (var i = 0; i < cookieList.length; i++) {
-        var cookie = cookieList[i].split("=");
-        if (cookie[0] == name) {
-            return decodeURI(cookie[1]);
-        }
-    }
-}
 
 $(document).ready(function () {
     resize();
@@ -99,10 +89,11 @@ function Write(_tid, _isEdit) {
 
     $('#Write').fadeIn(FadeTime);
 
-    tid = _tid;
+    tid = _tid == undefined ? 0 : _tid;
     isEdit = _isEdit;
 
     $('#Nick').val(getCookie('Nick'));
+    $('#Password').val(getCookie('Password'));
 }
 function CloseWrite() {
     $('#Write').fadeOut(FadeTime);

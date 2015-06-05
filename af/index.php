@@ -73,7 +73,6 @@ var waitForAjax = setInterval(function() {
                 <a class="close-button" onclick="CloseComments();">×</a>
                 <a class="toolbar-button hide" id="Refresh-Topic">刷新</a>
                 <a class="toolbar-button hide" id="Reply">回复</a>
-                <div class="vertical-separator toolbar-button"></div>
                 <a class="toolbar-button pw-needed hide" id="Delete-Topic">删除</a>
                 <!-- todo: dialog to enter password -->
                 <div class="border toolbar-button pw-needed hide" id="Delete-Topic-Validate" style="position: absolute; top: 60px; right: 10px;">
@@ -112,7 +111,7 @@ var waitForAjax = setInterval(function() {
                 <label class="larger left" for="Content">正文</label>
                 <div class="right">
                     <input id="ContentUseHTML" type="checkbox" />
-                    <label for="ContentUseHTML">使用HTML</label>
+                    <label class="small" for="ContentUseHTML">使用HTML</label>
                 </div>
                 <textarea id="Content" name="Content" maxlength="20000"></textarea>
                 <br /><br />
