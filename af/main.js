@@ -180,6 +180,7 @@ function Delete(cid) {
             Password: pw
         }, function (data) {
             if (data == 'Succeed') {
+                $('#Delete-Topic-Validate').fadeOut(FadeTime);
                 CloseComments();
                 ajaxLoadTopics();
             } else if (data == 'Failed') {
