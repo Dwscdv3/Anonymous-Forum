@@ -50,12 +50,7 @@ var waitForAjax = setInterval(function() {
             <h5 class="sidebaritem-150">Anonymous Forum</h5>
             <div class="separator"></div>
 
-            <div class="smaller"><b>Tips:</b><br />
-                正文支持HTML格式<br />
-                &amp;&quot;&gt;&lt;等字符请注意转义<br />
-                <br />
-                计划中: <br />
-                &nbsp;&nbsp;正文HTML开关<br />
+            <div class="smaller">
                 决策中: <br />
                 &nbsp;&nbsp;可视化编辑器<br />
             </div>
