@@ -76,7 +76,7 @@ var waitForAjax = setInterval(function() {
                 <a class="toolbar-button pw-needed hide" id="Delete-Topic">删除</a>
                 <a class="toolbar-button pw-needed hide" id="Edit-Topic">编辑</a>
             </div>
-            <div class="border full-screen-inner" id="Comments-Inner" style="z-index: -1;">
+            <div class="border full-screen-inner" id="Comments-Inner">
 
             </div>
         </div>
