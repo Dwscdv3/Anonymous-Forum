@@ -119,7 +119,7 @@ var waitForAjax = setInterval(function() {
         ">
             <label class="inline" for="Password-Delete">密码</label>
             <input id="Password-Delete" name="Password" type="password" />
-            <input type="button" value="确认" onclick="Delete();" />
+            <input type="button" value="确认" onclick="$(this).fadeOut(FadeTime); Delete();" />
         </div>
     </body>
 </html>
