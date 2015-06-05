@@ -74,22 +74,7 @@ var waitForAjax = setInterval(function() {
                 <a class="toolbar-button hide" id="Refresh-Topic">刷新</a>
                 <a class="toolbar-button hide" id="Reply">回复</a>
                 <a class="toolbar-button pw-needed hide" id="Delete-Topic">删除</a>
-                <!-- todo: dialog to enter password -->
-                <div class="border pw-needed hide" id="Delete-Topic-Validate" style="
-                position: absolute;
-                top: 60px;
-                right: 10px;
-                background-color: #666;
-                padding: 5px;
-                ">
-                    <label class="inline" for="Password-Delete">密码</label>
-                    <input id="Password-Delete" name="Password" type="password" />
-                    <input type="button" value="确认" onclick="Delete();" />
-                </div>
                 <a class="toolbar-button pw-needed hide" id="Edit-Topic">编辑</a>
-                <!-- todo:
-                       variable: isEdit
-                       form: 管理密码 to verify password -->
             </div>
             <div class="border full-screen-inner" id="Comments-Inner" style="z-index: -1;">
 
@@ -123,6 +108,17 @@ var waitForAjax = setInterval(function() {
                 <br /><br />
                 <input class="larger" type="button" value="发表" onclick="Submit();" />
             </div>
+        </div>
+        <div class="border pw-needed hide" id="Delete-Topic-Validate" style="
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: #666;
+            padding: 5px;
+        ">
+            <label class="inline" for="Password-Delete">密码</label>
+            <input id="Password-Delete" name="Password" type="password" />
+            <input type="button" value="确认" onclick="Delete();" />
         </div>
     </body>
 </html>
