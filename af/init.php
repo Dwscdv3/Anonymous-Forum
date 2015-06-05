@@ -56,28 +56,38 @@ if ($_POST != null) {
 }
 
 function createTable($con, $pre) {
-    $con->query("CREATE TABLE `".$pre."_Topics` (
-        `ID` INT NOT NULL AUTO_INCREMENT,
-        `Title` VARCHAR(253) BINARY NOT NULL,
-        `Content` VARCHAR(20000) BINARY,
-        `Nick` VARCHAR(24) BINARY,
-        `UID` CHAR(4) BINARY NOT NULL,
-        `LastTime` TIMESTAMP NOT NULL,
-        `Time` TIMESTAMP NOT NULL,
-        `Comments` INT DEFAULT 0,
-        PRIMARY KEY(ID)
-    ) DEFAULT CHARSET=utf8");      # LastTime 字段应在发表评论时更新
+    $con->query("
+CREATE TABLE `".$pre."_Topics` (
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `Title` VARCHAR(253) BINARY NOT NULL,
+    `Content` VARCHAR(20000) BINARY,
+    `Nick` VARCHAR(24) BINARY,
+    `UID` CHAR(4) BINARY NOT NULL,
+    `LastTime` TIMESTAMP NOT NULL,
+    `Time` TIMESTAMP NOT NULL,
+    `Comments` INT DEFAULT 0,
+    `Password` CHAR(32),
+    PRIMARY KEY(ID)
+) DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX Topics_ID_Index ON `".$pre."_Topics`(ID);
+CREATE INDEX Topics_LastTime_Index ON `".$pre."_Topics`(LastTime DESC);
+");
 
-    $con->query("CREATE TABLE `".$pre. "_Comments` (
-        `ID` INT NOT NULL AUTO_INCREMENT,
-        `Topic` INT NOT NULL,
-        `Title` VARCHAR(253) BINARY NOT NULL,
-        `Content` VARCHAR(20000) BINARY,
-        `Nick` VARCHAR(24) BINARY,
-        `UID` CHAR(4) BINARY NOT NULL,
-        `Time` TIMESTAMP NOT NULL,
-        PRIMARY KEY(ID)
-    ) DEFAULT CHARSET=utf8");
+    $con->query("
+CREATE TABLE `".$pre. "_Comments` (
+    `ID` INT NOT NULL AUTO_INCREMENT,
+    `Topic` INT NOT NULL,
+    `Title` VARCHAR(253) BINARY NOT NULL,
+    `Content` VARCHAR(20000) BINARY,
+    `Nick` VARCHAR(24) BINARY,
+    `UID` CHAR(4) BINARY NOT NULL,
+    `Time` TIMESTAMP NOT NULL,
+    `Password` CHAR(32),
+    PRIMARY KEY(ID)
+) DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX Comments_ID_Index ON `".$pre."_Comments`(ID);
+CREATE INDEX Comments_Topic_Index ON `".$pre."_Comments`(Topic);
+");
 }
 
 function delTable($con, $pre) {
@@ -102,10 +112,6 @@ function delTable($con, $pre) {
             }
             .textbox {
                 color: #ddd;
-                background-color: rgba(0, 0, 0, 0.00);
-
-                border-width: 0 0 1px 0;
-                border-bottom-color: #777;
 
                 width: 160px;
             }

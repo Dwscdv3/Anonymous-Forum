@@ -12,6 +12,8 @@ if (!isset($_COOKIE["UID"])) {
     setcookie("UID", genUID(), time() + (86400 * 365));
 }
 
+// QueryString ?id=*
+// 立即转到该主题的内容
 if ($_GET["id"] != null) {
     echo '<script type="text/javascript">
 var waitForAjax = setInterval(function() {
@@ -36,6 +38,7 @@ var waitForAjax = setInterval(function() {
         <title>匿名版</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="jslib/lib.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
@@ -47,7 +50,15 @@ var waitForAjax = setInterval(function() {
             <h5 class="sidebaritem-150">Anonymous Forum</h5>
             <div class="separator"></div>
 
-            <div class="smaller"><b>Tips:</b><br />正文支持HTML格式<br />&amp;&quot;&gt;&lt;等字符请注意转义</div>
+            <div class="smaller"><b>Tips:</b><br />
+                正文支持HTML格式<br />
+                &amp;&quot;&gt;&lt;等字符请注意转义<br />
+                <br />
+                计划中: <br />
+                &nbsp;&nbsp;正文HTML开关<br />
+                决策中: <br />
+                &nbsp;&nbsp;可视化编辑器<br />
+            </div>
 
             <div class="bottom z-10" id="ReturnDiv">
                 <a class="sidebaritem-150" onclick="ajaxLoadTopics();">☯ 刷新</a>
@@ -65,10 +76,22 @@ var waitForAjax = setInterval(function() {
         <div class="center full-screen half-transparent" style="display: none;" id="Comments">
             <div class="head">
                 <a class="close-button" onclick="CloseComments();">×</a>
-                <a class="toolbar-button" onclick="Write($('#TID').text());">回复</a>
-                <a class="toolbar-button" onclick="LoadComments(tid);">刷新</a>
+                <a class="toolbar-button hide" id="Refresh-Topic">刷新</a>
+                <a class="toolbar-button hide" id="Reply">回复</a>
+                <div class="vertical-separator toolbar-button"></div>
+                <a class="toolbar-button pw-needed hide" id="Delete-Topic">删除</a>
+                <!-- todo: dialog to enter password -->
+                <div class="border toolbar-button pw-needed hide" id="Delete-Topic-Validate" style="position: absolute; top: 60px; right: 10px;">
+                    <label class="inline" for="Password-Delete">密码</label>
+                    <input id="Password-Delete" name="Password" type="password" />
+                    <input type="button" onclick="Delete();" />
+                </div>
+                <a class="toolbar-button pw-needed hide" id="Edit-Topic">编辑</a>
+                <!-- todo:
+                       variable: isEdit
+                       form: 管理密码 to verify password -->
             </div>
-            <div class="full-screen-inner" id="Comments-Inner">
+            <div class="border full-screen-inner" id="Comments-Inner">
 
             </div>
         </div>
@@ -76,18 +99,27 @@ var waitForAjax = setInterval(function() {
             <div class="head">
                 <a class="close-button" onclick="CloseWrite();">×</a>
             </div>
-            <div class="full-screen-inner" id="Write-Inner">
-                <label for="Title-Write" style="display: inline;">标题</label>
-                <input class="dark-textbox" id="Title-Write" name="Title" type="text" style="width: 90%;">
+            <div class="border full-screen-inner" id="Write-Inner">
+                <label class="larger" for="Title-Write">标题</label>
+                <input id="Title-Write" name="Title" type="text" maxlength="253" />
                 <br />
                 <span class="small right" id="TitleRequired">* 标题必须填写&nbsp;</span>
                 <br />
-                <label for="Nick" style="display: inline;">昵称</label>
-                <input class="dark-textbox" id="Nick" name="Nick" type="text" style="width: 90%;">
+                <div class="left">
+                    <label class="larger" for="Nick">昵称</label>
+                    <input id="Nick" name="Nick" type="text" maxlength="24" />
+                </div>
+                <div class="right">
+                    <label class="larger" id="Password-Label" for="Password">管理密码<span class="small">(可留空, 但将无法编辑删除)</span></label>
+                    <input id="Password" name="Password" type="text" maxlength="128" />&nbsp;
+                </div>
                 <br /><br />
-                <label for="Content">正文</label>
-                <span class="x-small right">$ 可以使用HTML排版，含有JS代码的话会被黑洞吃掉哦&nbsp;</span>
-                <textarea class="dark-textarea" id="Content" name="Content"></textarea>
+                <label class="larger left" for="Content">正文</label>
+                <div class="right">
+                    <input id="ContentUseHTML" type="checkbox" />
+                    <label for="ContentUseHTML">使用HTML</label>
+                </div>
+                <textarea id="Content" name="Content" maxlength="20000"></textarea>
                 <br /><br />
                 <input type="button" value="发表" onclick="Submit();" />
             </div>

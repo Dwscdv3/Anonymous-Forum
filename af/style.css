@@ -19,13 +19,9 @@ html, body {
     scrollbar-base-color: rgba(0, 0, 0, 0);
     scrollbar-arrow-color: rgba(127, 127, 127, 0.5);
 }
-label {
-    font-size: larger;
-    float: left;
-}
 pre {
     white-space: pre-wrap;
-    white-space: -moz-pre-wrap;=
+    white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
 
@@ -34,9 +30,44 @@ pre {
 div {
 
 }
+input[type=submit],
+input[type=button] {
+    border-radius: 3px;
+    border: 2px #999 solid;
+
+    color: inherit;
+    background-color: #555;
+
+    font-family: "Microsoft YaHei Light", "Segoe UI Light", "Microsoft YaHei", "Segoe UI", Helvetica, sans-serif;
+    font-size: larger;
+}
+input[type=text],
+input[type=password] {
+    color: #ddd;
+    background-color: rgba(0, 0, 0, 0.00);
+
+    border-width: 0 0 2px 0;
+    border-color: #777;
+
+    font-size: larger;
+}
+textarea {
+    color: #ddd;
+    background-color: rgba(127, 127, 127, 0.2);
+
+    border: 2px #777;
+
+    width: 98%;
+    min-height: 100px;
+}
 
 
 /* Single Rule */
+
+.hide {
+    display: none;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -104,7 +135,18 @@ div {
 .z-10 {
     z-index: 10;
 }
+
+.border {
+    -webkit-box-shadow: 0 0 20px #777;
+    -moz-box-shadow: 0 0 20px #777;
+    box-shadow: 0 0 20px #777;
+
+    border-radius: 20px;
+}
 /* Single Rule End */
+
+
+/* Mixed Rule */
 
 .full-screen {
     position: fixed;
@@ -121,32 +163,9 @@ div {
 
     padding: 20px;
 
-    -webkit-box-shadow: 0 0 20px #777;
-    -moz-box-shadow: 0 0 20px #777;
-    box-shadow: 0 0 20px #777;
-
-    border-radius: 20px;
-
     float: left;
 
     overflow: auto;
-}
-
-.dark-textbox {
-    color: #ddd;
-    background-color: rgba(0, 0, 0, 0.00);
-
-    border-width: 0 0 2px 0;
-    border-color: #777;
-}
-.dark-textarea {
-    color: #ddd;
-    background-color: rgba(127, 127, 127, 0.2);
-
-    border: 2px #777;
-
-    width: 98%;
-    min-height: 100px;
 }
 
 /* Topics */
@@ -242,7 +261,22 @@ a:active {
 .separator {
     background-color: #666;
     height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+.vertical-separator {
+    background-color: #666;
+    width: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.form-incorrect {
+    background-color: rgba(255, 127, 127, 0.50);
+    border-color: rgba(255, 63, 63, 0.50);
+}
+
+
 
 #Head {
     background-color: rgba(68, 68, 68, 0.85);
