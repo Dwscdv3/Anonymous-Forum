@@ -19,7 +19,7 @@ $(".toolbar-button").removeClass("hide");
 ' . ( empty($row1["Password"]) ? '$(".pw-needed").addClass("hide");' : '' ) . '
 </script>
 <div>
-    <div id="Head">
+    <div id="Head" style="z-index: -1;">
         <h2 class="left"><span id="Title-Topic">'.$row1["Title"].'</span><span class="smaller">&nbsp;&nbsp;&nbsp;#<span id="TID">'.$id.'</span></span></h2>
         <br />
         <div class="right monospace">&nbsp;&nbsp;&nbsp;'.$row1["Time"].'</div>
