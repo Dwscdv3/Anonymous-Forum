@@ -115,6 +115,7 @@ var waitForAjax = setInterval(function() {
             right: 10px;
             background-color: #666;
             padding: 5px;
+            z-index: 200;
         ">
             <label class="inline" for="Password-Delete">密码</label>
             <input id="Password-Delete" name="Password" type="password" />
