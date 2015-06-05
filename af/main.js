@@ -25,6 +25,8 @@ $(document).ready(function () {
         // 编辑主题
         $('#Edit-Topic').click(function () {
             Write($('#TID').text(), 1);
+            $('#Title-Write').val($('#Title-Topic').html());
+            $('#Content').val($('#Content-Topic').html());
         });
     }
     resize();
@@ -160,14 +162,15 @@ function Submit() {
             } else {
                 ajaxLoadTopics();
             }
+            CloseWrite();
+            setTimeout(function () {
+                $('#Title-Write').val('');
+                $('#Content').val('');
+            }, FadeTime);
         }
     });
 
-    CloseWrite();
-    setTimeout(function () {
-        $('#Title-Write').val('');
-        $('#Content').val('');
-    }, FadeTime);
+
 }
 function Delete(cid) {
     var pw = $('#Password-Delete').val();

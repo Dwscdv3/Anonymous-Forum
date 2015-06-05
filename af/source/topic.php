@@ -20,14 +20,14 @@ $(".toolbar-button").removeClass("hide");
 </script>
 <div>
     <div id="Head">
-        <h2 class="left">'.$row1["Title"].'<span class="smaller">&nbsp;&nbsp;&nbsp;#<span id="TID">'.$id.'</span></span></h2>
+        <h2 class="left"><span id="Title-Topic">'.$row1["Title"].'</span><span class="smaller">&nbsp;&nbsp;&nbsp;#<span id="TID">'.$id.'</span></span></h2>
         <br />
         <div class="right monospace">&nbsp;&nbsp;&nbsp;'.$row1["Time"].'</div>
         <br />
         <div class="right">'.$row1["UID"].'：'.$nick1.'</div>
     </div>
     <br /><br /><br /><br />
-    <pre class="text-left larger" style="width: 100%;">'.$row1["Content"].'</pre>
+    <pre class="text-left larger" id="Content-Topic" style="width: 100%;">'.$row1["Content"].'</pre>
     <br />
     ';
     while ($row2 = $result2->fetch_array()) {
