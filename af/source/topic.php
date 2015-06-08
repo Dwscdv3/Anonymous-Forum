@@ -40,9 +40,7 @@ $(".toolbar-button").removeClass("hide");
         <br />
         <div class="right">'.$row2["UID"].'：'.$nick2.'</div>
     </div>
-    <br />
     <pre class="text-left larger" style="width: 100%;">'.$row2["Content"].'</pre>
-    <br />
 </div>';
     }
     echo '</div>';
