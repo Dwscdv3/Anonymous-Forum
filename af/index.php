@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 header("Content-type: text/html; charset=utf-8");
 
@@ -37,7 +37,7 @@ var waitForAjax = setInterval(function() {
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>匿名版</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="jslib/lib.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
